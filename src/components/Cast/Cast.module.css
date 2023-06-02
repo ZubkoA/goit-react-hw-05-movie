@@ -1,0 +1,23 @@
+.gap {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  list-style: none;
+}
+
+.gap_list {
+  margin-bottom: 8px;
+}
+.gap_list > img {
+  display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+.gap_list > p {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: justify;
+}
