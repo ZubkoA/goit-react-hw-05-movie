@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/290.9adf36cb.chunk.css","mappings":"AAAA,wBACE,eACF,CAEA,wBACE,iBACF","sources":["pages/Home/Home.module.css"],"sourcesContent":[".wrap_trend {\n  margin-top: 24px;\n}\n\n.list_trend {\n  margin-bottom: 8px;\n}\n"],"names":[],"sourceRoot":""}
