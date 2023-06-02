@@ -8,7 +8,6 @@ const API_KEY = 'c2bbff09d61c8579fc203c76a35e2f7a';
 const Movies = () => {
   const [value, setValue] = useState('');
   const [searchMovies, setSearchMovies] = useState([]);
-  // const [page, setPage] = useState(1);
 
   const [searchParams, setSearchParams] = useSearchParams();
   const handleChange = ({ target: { value } }) => {
@@ -30,12 +29,6 @@ const Movies = () => {
   );
   const location = useLocation();
 
-  // якби ще треба було змінювати сторінки використовуємо
-  //console.log(Object.fromEntrias([...searchParams])) also do in useMemo
-  //const {query, page} = useMemo(
-  //   () => searchParams.get('query'),
-  //   [searchParams]
-  // );
   useEffect(() => {
     fetch(
       `${BASE_URL}/search/movie?api_key=${API_KEY}&include_adult=false&language=en-US&page=1&query=${searchValue}`
