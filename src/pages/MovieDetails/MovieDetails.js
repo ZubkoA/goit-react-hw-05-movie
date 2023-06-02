@@ -26,8 +26,7 @@ const MovieDetails = () => {
       .catch(err => console.error(err));
   }, [movieId]);
 
-  const { title, popularity, overview, genres, backdrop_path, release_date } =
-    movieDetails;
+  const { title, popularity, overview, backdrop_path } = movieDetails;
 
   // const release = release_date.slice(0, 4);
   const popularityRound = Math.round(popularity);
