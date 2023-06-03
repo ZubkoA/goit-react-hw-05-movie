@@ -8,12 +8,24 @@ const Layout = () => {
       <header>
         <ul className={css.wrap}>
           <li className={css.list}>
-            <NavLink to="/" className={css.nav}>
+            <NavLink
+              to="/"
+              className={css.nav}
+              style={({ isActive }) => ({
+                color: isActive ? '#cf711f' : '#000',
+              })}
+            >
               Home
             </NavLink>
           </li>
           <li className={css.list}>
-            <NavLink to="/movies" className={css.nav}>
+            <NavLink
+              to="/movies"
+              className={css.nav}
+              style={({ isActive }) => ({
+                color: isActive ? '#cf711f' : '#000',
+              })}
+            >
               Movies
             </NavLink>
           </li>

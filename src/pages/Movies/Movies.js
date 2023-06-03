@@ -1,9 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import { fetchSearchMovies } from '../../services/Api';
 import css from './Movies.module.css';
-
-const BASE_URL = 'https://api.themoviedb.org/3/';
-const API_KEY = 'c2bbff09d61c8579fc203c76a35e2f7a';
 
 const Movies = () => {
   const [value, setValue] = useState('');
@@ -22,7 +20,7 @@ const Movies = () => {
     setSearchParams({ query: value });
     setValue('');
   };
-
+  console.log(value);
   const searchValue = useMemo(
     () => searchParams.get('query') ?? '',
     [searchParams]
@@ -30,12 +28,7 @@ const Movies = () => {
   const location = useLocation();
 
   useEffect(() => {
-    fetch(
-      `${BASE_URL}/search/movie?api_key=${API_KEY}&include_adult=false&language=en-US&page=1&query=${searchValue}`
-    )
-      .then(response => response.json())
-      .then(data => setSearchMovies(data.results))
-      .catch(err => console.error(err));
+    fetchSearchMovies(searchValue).then(setSearchMovies);
   }, [searchValue]);
 
   return (
